@@ -11,7 +11,8 @@ import { Link } from 'react-router-dom';
 
 import logo from '../../assets/logo.svg'
 
-
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
 
 const useStyles = makeStyles(theme => ({
     toolbarMargin: {
@@ -41,6 +42,11 @@ const useStyles = makeStyles(theme => ({
         "&:hover": {
             backgroundColor: "transparent"
         }
+    },
+    menu: {
+        backgroundColor: "skyblue",
+        color: "white",
+
     }
 }))
 
@@ -74,7 +80,19 @@ function ElevationScroll(props) {
 
 const Header = () => {
 
-    const [value, setValue] = useState(0)
+    const [value, setValue] = useState(0);
+
+    const [anchorEl, setAnchorEl] = useState(null);
+    const [open, setOpen] = useState(false);
+
+    const handleClick = (e) => {
+        setAnchorEl(e.currentTarget)
+        setOpen(true)
+    }
+    const handleClose = (e) => {
+        setAnchorEl(null)
+        setOpen(false)
+    }
 
     const handleChange = (e, value) => {
         setValue(value)
@@ -95,7 +113,7 @@ const Header = () => {
             <ElevationScroll>
                 <AppBar position="fixed" color="primary">
                     <Toolbar disableGutters>
-                        <Button component={Link} to="/" className={classes.logoContainer} onClick={()=>setValue(0)} disableRipple>
+                        <Button component={Link} to="/" className={classes.logoContainer} onClick={() => setValue(0)} disableRipple>
                             <img alt="comp logo" src={logo} className={classes.logo} />
                         </Button>
                         {/* <Typography variant="h3" color="">
@@ -107,15 +125,52 @@ const Header = () => {
                             onChange={handleChange}
                             indicatorColor="primary"
                         >
-                            <Tab className={classes.tab} component={Link} to="/" label="Home"></Tab>
-                            <Tab className={classes.tab} component={Link} to="/services" label="Sevices"></Tab>
-                            <Tab className={classes.tab} component={Link} to="cources" label="Cources"></Tab>
-                            <Tab className={classes.tab} component={Link} to="about" label="About Us"></Tab>
-                            <Tab className={classes.tab} component={Link} to="contact" label="Contact Us"></Tab>
+                            <Tab className={classes.tab}
+                                component={Link} to="/"
+                                label="Home"></Tab>
+                            {/* <Tab className={classes.tab} component={Link} to="/services" label="Sevices"></Tab> */}
+                            <Tab aria-owns={anchorEl ? "simple-menu" : undefined}
+                                aria-haspopup={anchorEl ? "true" : undefined}
+                                onMouseOver={e => handleClick(e)}
+                                className={classes.tab}
+                                component={Link} to="cources"
+                                label="Cources"></Tab>
+                            <Tab className={classes.tab}
+                                component={Link} to="about"
+                                label="About Us"></Tab>
+                            <Tab
+                                className={classes.tab}
+                                component={Link} to="contact"
+                                label="Contact Us"></Tab>
                         </Tabs>
                         <Button variant="contained" color="secondary" className={classes.button}>
-                            Test Button
+                            Sign Up
                         </Button>
+                        <Menu id="simple-menu"
+                            anchorEl={anchorEl}
+                            open={open}
+                            onClose={handleClose}
+                            classes={{ paper: classes.menu }}
+                            MenuListProps={{ onMouseLeave: handleClose }}
+                            elevation={0}
+                        >
+                            <MenuItem onClick={() => { handleClose(); setValue(1) }}
+                                component={Link}
+                                to="/cources">All Courses
+                            </MenuItem>
+                            <MenuItem onClick={() => { handleClose(); setValue(1) }}
+                                component={Link}
+                                to="/pythondev">Python Development
+                            </MenuItem>
+                            <MenuItem onClick={() => { handleClose(); setValue(1) }}
+                                component={Link}
+                                to="/webdev">Web Development
+                            </MenuItem>
+                            <MenuItem onClick={() => { handleClose(); setValue(1) }}
+                                component={Link}
+                                to="/gamedev">Game Development
+                            </MenuItem>
+                        </Menu>
                     </Toolbar>
                 </AppBar>
             </ElevationScroll>

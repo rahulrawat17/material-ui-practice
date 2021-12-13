@@ -10,10 +10,13 @@ function App() {
         <Header />
         <Switch>
           <Route exact path="/" component={()=><div>Home</div>}></Route>
-          <Route exact path="/services" component={()=><div>Services</div>}></Route>
+          {/* <Route exact path="/services" component={()=><div>Services</div>}></Route> */}
           <Route exact path="/contact" component={()=><div>Contact</div>}></Route>
           <Route exact path="/cources" component={()=><div>Cources</div>}></Route>
           <Route exact path="/about" component={()=><div>About</div>}></Route>
+          <Route exact path="/pythondev" component={()=><div>Python Development</div>}></Route>
+          <Route exact path="/webdev" component={()=><div>Web Development</div>}></Route>
+          <Route exact path="/gamedev" component={()=><div>Game Development</div>}></Route>
         </Switch>
       </BrowserRouter>
       {/* {[...new Array(120)]
