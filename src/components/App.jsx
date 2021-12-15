@@ -1,7 +1,9 @@
+import React from 'react';
 import Header from "./ui/Header";
 import { ThemeProvider } from '@material-ui/core/styles';
 import theme from "./ui/theme";
 import { BrowserRouter, Route, Switch } from "react-router-dom"
+import Footer from "./ui/Footer";
 
 function App() {
   return (
@@ -9,16 +11,17 @@ function App() {
       <BrowserRouter>
         <Header />
         <Switch>
-          <Route exact path="/" component={()=><div>Home</div>}></Route>
+          <Route exact path="/" component={() => <div style={{"height": "2000px"}}>Home</div>}></Route>
           {/* <Route exact path="/services" component={()=><div>Services</div>}></Route> */}
-          <Route exact path="/contact" component={()=><div>Contact</div>}></Route>
-          <Route exact path="/cources" component={()=><div>Cources</div>}></Route>
-          <Route exact path="/about" component={()=><div>About</div>}></Route>
-          <Route exact path="/pythondev" component={()=><div>Python Development</div>}></Route>
-          <Route exact path="/webdev" component={()=><div>Web Development</div>}></Route>
-          <Route exact path="/gamedev" component={()=><div>Game Development</div>}></Route>
+          <Route exact path="/contact" component={() => <div>Contact</div>}></Route>
+          <Route exact path="/cources" component={() => <div>Cources</div>}></Route>
+          <Route exact path="/about" component={() => <div>About</div>}></Route>
+          <Route exact path="/pythondev" component={() => <div>Python Development</div>}></Route>
+          <Route exact path="/webdev" component={() => <div>Web Development</div>}></Route>
+          <Route exact path="/gamedev" component={() => <div>Game Development</div>}></Route>
         </Switch>
       </BrowserRouter>
+      <Footer />
       {/* {[...new Array(120)]
         .map(
           () => `Cras mattis consectetur purus sit amet fermentum.

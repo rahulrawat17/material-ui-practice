@@ -46,7 +46,14 @@ const useStyles = makeStyles(theme => ({
     menu: {
         backgroundColor: "skyblue",
         color: "white",
-
+        borderRadius: "0px"
+    },
+    menuItem: {
+        ...theme.typography.tab,
+        opacity: 0.7,
+        "&:hover": {
+            opacity: 1
+        }
     }
 }))
 
@@ -156,18 +163,22 @@ const Header = () => {
                         >
                             <MenuItem onClick={() => { handleClose(); setValue(1) }}
                                 component={Link}
+                                classes={{root: classes.menuItem}}
                                 to="/cources">All Courses
                             </MenuItem>
                             <MenuItem onClick={() => { handleClose(); setValue(1) }}
                                 component={Link}
+                                classes={{root: classes.menuItem}}
                                 to="/pythondev">Python Development
                             </MenuItem>
                             <MenuItem onClick={() => { handleClose(); setValue(1) }}
                                 component={Link}
+                                classes={{root: classes.menuItem}}
                                 to="/webdev">Web Development
                             </MenuItem>
                             <MenuItem onClick={() => { handleClose(); setValue(1) }}
                                 component={Link}
+                                classes={{root: classes.menuItem}}
                                 to="/gamedev">Game Development
                             </MenuItem>
                         </Menu>
