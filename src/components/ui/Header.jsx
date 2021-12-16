@@ -44,7 +44,7 @@ const useStyles = makeStyles(theme => ({
         }
     },
     menu: {
-        backgroundColor: "skyblue",
+        backgroundColor: "#6babce",
         color: "white",
         borderRadius: "0px"
     },
@@ -140,8 +140,8 @@ const Header = () => {
                                 aria-haspopup={anchorEl ? "true" : undefined}
                                 onMouseOver={e => handleClick(e)}
                                 className={classes.tab}
-                                component={Link} to="cources"
-                                label="Cources"></Tab>
+                                component={Link} to="services"
+                                label="Services"></Tab>
                             <Tab className={classes.tab}
                                 component={Link} to="about"
                                 label="About Us"></Tab>
@@ -164,22 +164,22 @@ const Header = () => {
                             <MenuItem onClick={() => { handleClose(); setValue(1) }}
                                 component={Link}
                                 classes={{root: classes.menuItem}}
-                                to="/cources">All Courses
+                                to="/services">All Services
                             </MenuItem>
                             <MenuItem onClick={() => { handleClose(); setValue(1) }}
                                 component={Link}
                                 classes={{root: classes.menuItem}}
-                                to="/pythondev">Python Development
+                                to="/ai">Artificial Inteligence
                             </MenuItem>
                             <MenuItem onClick={() => { handleClose(); setValue(1) }}
                                 component={Link}
                                 classes={{root: classes.menuItem}}
-                                to="/webdev">Web Development
+                                to="/ml">Machine Learning
                             </MenuItem>
                             <MenuItem onClick={() => { handleClose(); setValue(1) }}
                                 component={Link}
                                 classes={{root: classes.menuItem}}
-                                to="/gamedev">Game Development
+                                to="/gd">Graphic Design
                             </MenuItem>
                         </Menu>
                     </Toolbar>
