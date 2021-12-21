@@ -1,6 +1,7 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import footerAdornment from '../../assets/Footer Adornment.svg'
+// import footerAdornment from '../../assets/Footer Adornment2.svg'
 import Grid from '@material-ui/core/Grid'
 import { Link } from 'react-router-dom';
 
@@ -12,14 +13,16 @@ const useStyles = makeStyles(theme => ({
         position: "relative"
     },
     adornment: {
-        width: "25em",
+        width: "100%",
+        height: "15em",
+        // width: "25em",
         verticalAlign: "bottom",
-        [theme.breakpoints.down("md")]: {
-            width: "21em"
-        },
-        [theme.breakpoints.down("xm")]: {
-            width: "15em"
-        }
+        // [theme.breakpoints.down("md")]: {
+        //     width: "21em"
+        // },
+        // [theme.breakpoints.down("xm")]: {
+        //     width: "15em"
+        // }
     },
     mainContainer: {
         position: "absolute"
@@ -27,7 +30,7 @@ const useStyles = makeStyles(theme => ({
     link: {
         color: "white",
         fontFamily: "arial",
-        fontSize: "0.75rem",
+        fontSize: "0.8rem",
         fontWeight: "bold",
         textDecoration: "none"
     },
@@ -55,7 +58,7 @@ const Footer = () => {
                             Services
                         </Grid>
                         <Grid item component={Link} to="/ai" className={classes.link}>
-                            Artificial Inteligence
+                            Artificial Intelligence
                         </Grid>
                         <Grid item component={Link} to="/ml" className={classes.link}>
                             Machine Learning

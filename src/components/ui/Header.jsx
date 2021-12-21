@@ -9,6 +9,9 @@ import Tab from '@material-ui/core/Tab';
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
 
+import { SwipeableDrawer } from '@material-ui/core';
+import MenuIcon from '@material-ui/core'
+
 import logo from '../../assets/logo.svg'
 
 import Menu from '@material-ui/core/Menu';
@@ -87,10 +90,14 @@ function ElevationScroll(props) {
 
 const Header = () => {
 
+    const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
+
     const [value, setValue] = useState(0);
 
     const [anchorEl, setAnchorEl] = useState(null);
     const [open, setOpen] = useState(false);
+
+    const [drawerOpen, setDrawerOpen] = useState([])
 
     const handleClick = (e) => {
         setAnchorEl(e.currentTarget)
@@ -169,7 +176,7 @@ const Header = () => {
                             <MenuItem onClick={() => { handleClose(); setValue(1) }}
                                 component={Link}
                                 classes={{root: classes.menuItem}}
-                                to="/ai">Artificial Inteligence
+                                to="/ai">Artificial Intelligence
                             </MenuItem>
                             <MenuItem onClick={() => { handleClose(); setValue(1) }}
                                 component={Link}

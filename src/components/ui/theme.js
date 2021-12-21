@@ -26,6 +26,14 @@ export default createTheme({
             color: "white",
             lineHeight: 1.5
         },
+        h4: {
+            fontFamily: "Raleway",
+            fontWeight: 700,
+            fontSize: "1.75rem",
+            // color: `${arcOrange}`
+            color: "blue",
+            // lineHeight: 1.5
+        },
         // h3: {
         //     fontWeight: "300"
         // },    

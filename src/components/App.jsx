@@ -14,12 +14,12 @@ function App() {
         <Switch>
           <Route exact path="/" component={() => <LandingPage />}></Route>
           {/* <Route exact path="/services" component={()=><div>Services</div>}></Route> */}
-          <Route exact path="/contact" component={() => <div style={{ "height": "2000px" }}>Contact</div>}></Route>
-          <Route exact path="/services" component={() => <div style={{ "height": "2000px" }}>Services</div>}></Route>
-          <Route exact path="/about" component={() => <div style={{ "height": "2000px" }}>About</div>}></Route>
-          <Route exact path="/ai" component={() => <div style={{ "height": "2000px" }}>Artificial Intelligence</div>}></Route>
-          <Route exact path="/ml" component={() => <div style={{ "height": "2000px" }}>Machine Learning</div>}></Route>
-          <Route exact path="/gd" component={() => <div style={{ "height": "2000px" }}>Graphic Design</div>}></Route>
+          <Route exact path="/contact" component={() => <div style={{ "height": "900px" }}>Contact</div>}></Route>
+          <Route exact path="/services" component={() => <div style={{ "height": "900px" }}>Services</div>}></Route>
+          <Route exact path="/about" component={() => <div style={{ "height": "900px" }}>About</div>}></Route>
+          <Route exact path="/ai" component={() => <div style={{ "height": "900px" }}>Artificial Intelligence</div>}></Route>
+          <Route exact path="/ml" component={() => <div style={{ "height": "900px" }}>Machine Learning</div>}></Route>
+          <Route exact path="/gd" component={() => <div style={{ "height": "900px" }}>Graphic Design</div>}></Route>
         </Switch>
         
         <Footer />
