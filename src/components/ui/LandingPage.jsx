@@ -151,8 +151,8 @@ const LandingPage = () => {
       <Grid item> {/* Services Block */}
         <Grid container direction="row">
           <Grid item style={{ "marginLeft": "10em" }}>
-            <Typography variant="h4"> 
-            {/* className={classes.specialText} */}
+            <Typography variant="h4">
+              {/* className={classes.specialText} */}
               Artificial Intelligence
             </Typography>
             <Typography variant="subtitle1">
@@ -163,6 +163,9 @@ const LandingPage = () => {
             </Typography>
             <Typography variant="subtitle1">
               Learn to recognize color & many more.
+            </Typography>
+            <Typography variant="subtitle1">
+              Integration of AI with hardware.
             </Typography>
             <Button className={classes.learnButton} variant="outlined">
               <span style={{ marginRight: 10 }}>Learn More</span>
@@ -182,13 +185,16 @@ const LandingPage = () => {
               Machine Learning
             </Typography>
             <Typography variant="subtitle1">
-              Learn to detect & recognize human faces.
+              Train your own machine.
             </Typography>
             <Typography variant="subtitle1">
-              Learn to recognize objects.
+              Test & Develop cases for your machine.
             </Typography>
             <Typography variant="subtitle1">
-              Learn to recognize color & many more.
+              Deploy your own predictive learning.
+            </Typography>
+            <Typography variant="subtitle1">
+              Learn Block Coding & Python Coding.
             </Typography>
             <Button className={classes.learnButton} variant="outlined">
               <span style={{ marginRight: 10 }}>Learn More</span>
@@ -209,13 +215,16 @@ const LandingPage = () => {
               Graphic Design
             </Typography>
             <Typography variant="subtitle1">
-              Learn to detect & recognize human faces.
+              Block based coding to learn Graphics Designing.
             </Typography>
             <Typography variant="subtitle1">
-              Learn to recognize objects.
+              50+ Graphics Designing Activities/ Projects.
             </Typography>
             <Typography variant="subtitle1">
-              Learn to recognize color & many more.
+              Draw your Imaginations & learn coding.
+            </Typography>
+            <Typography variant="subtitle1">
+              Think Out of the box & draw your own graphics.
             </Typography>
             <Button className={classes.learnButton} variant="outlined">
               <span style={{ marginRight: 10 }}>Learn More</span>
@@ -236,13 +245,16 @@ const LandingPage = () => {
               Python Learning
             </Typography>
             <Typography variant="subtitle1">
-              Learn to detect & recognize human faces.
+              GUI based coding to learn Python Coding.
             </Typography>
             <Typography variant="subtitle1">
-              Learn to recognize objects.
+              100+ Basic Python Activities, 50+ Basic Python Projects.
             </Typography>
             <Typography variant="subtitle1">
-              Learn to recognize color & many more.
+              Learn Block Coding & Python Coding.
+            </Typography>
+            <Typography variant="subtitle1">
+              Draw your Imaginations & learn coding.
             </Typography>
             <Button className={classes.learnButton} variant="outlined">
               <span style={{ marginRight: 10 }}>Learn More</span>
