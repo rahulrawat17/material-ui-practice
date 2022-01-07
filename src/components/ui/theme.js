@@ -4,6 +4,8 @@ const arcBlue = "#6ba6ce"
 // #0b72b9
 const arcOrange = "#ffba60"
 
+const theme = createTheme();
+
 export default createTheme({
     palette: {
         common: {
@@ -32,7 +34,21 @@ export default createTheme({
             fontSize: "1.75rem",
             // color: `${arcOrange}`
             color: "blue",
-            // lineHeight: 1.5
+            // lineHeight: 1.5,
+            [theme.breakpoints.down("md")]: {
+                fontSize: "1.5rem",
+            },
+            [theme.breakpoints.down("xs")]: {
+                fontSize: "1.25rem",
+            }
+        },
+        subtitle1: {
+            [theme.breakpoints.down("md")]: {
+                fontSize: "1rem",
+            },
+            [theme.breakpoints.down("xs")]: {
+                fontSize: "0.75rem",
+            }
         },
         // h3: {
         //     fontWeight: "300"

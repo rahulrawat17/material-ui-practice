@@ -1,18 +1,19 @@
 import React from 'react'
 import bg from '../../assets/bg.jpg'
-// import $ from 'jquery';
+import $ from 'jquery';
 import Grid from "@material-ui/core/Grid"
 import ButtonArrow from '../ui/ButtonArrow'
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import { Link } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-
 import AI_Real_World_png from "../../assets/AI_Real_World.png"
 import Machine_Learning_png from "../../assets/Machine_Learning.png"
 import Graphics_Designing_png from "../../assets/Graphics_Designing.png"
 import Basic_Python_png from "../../assets/Basic_Python.png"
+import '../../App.css'
 
+import { useHistory } from 'react-router-dom';
 
 const useStyles = makeStyles(theme => ({
 
@@ -96,9 +97,47 @@ const useStyles = makeStyles(theme => ({
   },
   serviceImg: {
     width: "12em",
-    margin: "0.5em"
+    margin: "0.5em",
+    [theme.breakpoints.down("md")]: {
+      width: "10em",
+      margin: "0.3em",
+    },
+    [theme.breakpoints.down("xs")]: {
+      width: "8em",
+      margin: "0.1em",
+    }
+  },
+  serviceGridLeftMargin: {
+    marginLeft: "10em",
+    [theme.breakpoints.down("md")]: {
+      marginLeft: "4em"
+    },
+    [theme.breakpoints.down("xs")]: {
+      marginLeft: "1em"
+    }
+  },
+  serviceGridRightMargin: {
+    marginRight: "10em",
+    [theme.breakpoints.down("md")]: {
+      marginRight: "4em"
+    },
+    [theme.breakpoints.down("xs")]: {
+      marginRight: "1em"
+    }
+  },
+  serviceTitleText: {
+    variant: "h1"
+  },
+  serviceTag: {
+    [theme.breakpoints.down("xs")]: {
+      justifyContent: "center",
+    }
   }
 }));
+
+
+
+
 
 const LandingPage = () => {
   const classes = useStyles();
@@ -115,7 +154,10 @@ const LandingPage = () => {
     marginBottom: "4rem",
     // marginTop: "-14px"
   }
+
+  const history = useHistory();
   return (
+
     <div>
       <div style={myStyle}
       //  className="top-container"
@@ -130,8 +172,8 @@ const LandingPage = () => {
                 </Typography>
                 <Grid container justifyContent="center" className={classes.buttonContainer}>
                   <Grid item>
-                    <Button variant="contained" className={classes.estimateButton}>
-                      Free Trail
+                    <Button onClick={()=>{history.push('/dashboard')}} variant="contained" className={classes.estimateButton}>
+                      Free Trial
                     </Button>
                   </Grid>
                   <Grid item>
@@ -150,8 +192,8 @@ const LandingPage = () => {
       </div>
       <Grid item> {/* Services Block */}
         <Grid container direction="row">
-          <Grid item style={{ "marginLeft": "10em" }}>
-            <Typography variant="h4">
+          <Grid item className={classes.serviceGridLeftMargin}>
+            <Typography variant="h4" >
               {/* className={classes.specialText} */}
               Artificial Intelligence
             </Typography>
@@ -179,7 +221,7 @@ const LandingPage = () => {
       </Grid>
 
       <Grid item> {/* Services Block */}
-        <Grid container direction="row" justifyContent="flex-end">
+        <Grid className container direction="row" justifyContent="flex-end" className={classes.test} >
           <Grid item>
             <Typography variant="h4">
               Machine Learning
@@ -201,16 +243,15 @@ const LandingPage = () => {
               <ButtonArrow width={10} height={10} fill="blue" />
             </Button>
           </Grid>
-          <Grid item style={{ "marginRight": "10em" }}>
+          <Grid item className={classes.serviceGridRightMargin}>
             <img className={classes.serviceImg} src={Machine_Learning_png} alt="Machine Learning image" />
           </Grid>
         </Grid>
       </Grid>
 
-
       <Grid item> {/* Services Block */}
         <Grid container direction="row">
-          <Grid item style={{ "marginLeft": "10em" }}>
+          <Grid item className={classes.serviceGridLeftMargin}>
             <Typography variant="h4">
               Graphic Design
             </Typography>
@@ -237,7 +278,6 @@ const LandingPage = () => {
         </Grid>
       </Grid>
 
-
       <Grid item style={{ "marginBottom": "5rem" }}> {/* Services Block */}
         <Grid container direction="row" justifyContent="flex-end">
           <Grid item>
@@ -248,7 +288,7 @@ const LandingPage = () => {
               GUI based coding to learn Python Coding.
             </Typography>
             <Typography variant="subtitle1">
-              100+ Basic Python Activities, 50+ Basic Python Projects.
+              100+ Basic Python Activities, 50+ Python Projects.
             </Typography>
             <Typography variant="subtitle1">
               Learn Block Coding & Python Coding.
@@ -261,11 +301,12 @@ const LandingPage = () => {
               <ButtonArrow width={10} height={10} fill="blue" />
             </Button>
           </Grid>
-          <Grid item style={{ "marginRight": "10em" }}>
+          <Grid item className={classes.serviceGridRightMargin}>
             <img className={classes.serviceImg} src={Basic_Python_png} alt="Basic Python image" />
           </Grid>
         </Grid>
       </Grid>
+
     </div>
   )
 }

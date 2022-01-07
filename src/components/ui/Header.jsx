@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 import { IconButton } from '@material-ui/core';
 import { SwipeableDrawer } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
-import logo from '../../assets/logo.svg'
+import logo from '../../assets/logo.svg';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import { useMediaQuery } from '@material-ui/core';
@@ -372,7 +372,7 @@ const Header = () => {
                     </Toolbar>
                 </AppBar>
             </ElevationScroll>
-            <div className={classes.toolbarMargin} />
+            {/* <div className={classes.toolbarMargin} /> */}
         </React.Fragment>
     )
 }
